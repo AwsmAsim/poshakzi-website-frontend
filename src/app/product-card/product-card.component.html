@@ -1,0 +1,287 @@
+<!--Product card for dektop-->
+<div class="row mb-4 d-none d-lg-flex">
+  <div
+    class="col-12"
+    style="height: 80vh; background-color: white; border: 1px black solid"
+  >
+    <div class="row d-flex justify-content-evenly" style="height: 100%">
+      <!--product image-->
+      <div
+        class="col-6 d-flex flex-column justify-content-center"
+        style="height: calc(100% - 5rem); width: 30%; margin-top: 2.5rem"
+      >
+        <!-- <div class="p-4" style="background-color: white;">
+                </div> -->
+
+        <!-- <img src="../../assets/images/sample/sample_tee.png" alt="Product Image" class="img-fluid rounded-start magnifier-container" 
+                style="height: 100%; 
+                "
+                > -->
+
+        <lib-ngx-image-zoom
+          [thumbImage]="teeImage"
+          [fullImage]="teeImage"
+          [zoomMode]="'hover'"
+        ></lib-ngx-image-zoom>
+      </div>
+
+      <!--product name, pricing, details, etc-->
+      <div
+        class="col-6 d-flex flex-column justify-content-center ps-4 pe-4 pb-4"
+        style="height: calc(100% - 5rem); margin-top: 2.5rem; color: black"
+      >
+        <div
+          class="d-flex flex-column justify-content-between"
+          style="height: 100vh"
+        >
+          <div class="d-flex flex-column">
+            <p class="text-capitalize" style="font-weight: 400; color: grey">
+              WINTER HOODIE
+            </p>
+            <p class="fs-1 text-capitalize" style="font-weight: 400">
+              Twakkul hoodie 320 GSM
+            </p>
+            <hr />
+          </div>
+
+          <div class="d-flex flex-column">
+            <p class="fs-1" style="font-weight: 200">₹ 849.00</p>
+            <p style="color: gray; padding-top: 5px">Short Description</p>
+            <p style="font-weight: 100">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
+              quam cumque aliquid aperiam nostrum eos.
+            </p>
+            <div class="p-v-md"></div>
+
+            <div class="d-flex justify-content-start">
+              <p class="size-cat">S</p>
+              <div class="p-h-sm"></div>
+              <p class="selected-size-cat">M</p>
+              <div class="p-h-sm"></div>
+              <p class="size-cat">L</p>
+              <div class="p-h-sm"></div>
+              <p class="size-cat">XL</p>
+            </div>
+
+            <div class="p-v-sm"></div>
+            <div class="row">
+              <button
+                class="btn col"
+                style="
+                  padding-left: 50px;
+                  padding-right: 50px;
+                  padding-top: 13px;
+                  padding-bottom: 13px;
+                  background-color: black;
+                  color: white;
+                  font-size: 16px;
+                  border-radius: 0px;
+                "
+              >
+                Buy now
+              </button>
+              <div style="width: 10px"></div>
+              <button
+                class="btn col"
+                style="
+                  padding-left: 50px;
+                  padding-right: 50px;
+                  padding-top: 13px;
+                  padding-bottom: 13px;
+                  color: black;
+                  font-size: 16px;
+                  border-radius: 0px;
+                  border: 2px black solid;
+                "
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="col-6 d-flex flex-wrap justify-content-start align-items-start"
+          >
+            <!-- Add four small images here -->
+            <div class="small-image-container">
+              <img
+                src="../../assets/images/sample/sample_tee.png"
+                alt="Small Image 1"
+                class="img-fluid rounded small-image"
+              />
+            </div>
+            <div class="p-h-sm"></div>
+            <div class="small-image-container">
+              <img
+                src="../../assets/images/sample/sample_tee.png"
+                alt="Small Image 2"
+                class="img-fluid rounded small-image"
+              />
+            </div>
+            <div class="p-h-sm"></div>
+            <div class="small-image-container">
+              <img
+                src="../../assets/images/sample/sample_tee.png"
+                alt="Small Image 3"
+                class="img-fluid rounded small-image"
+              />
+            </div>
+            <div class="p-h-sm"></div>
+            <div class="small-image-container">
+              <img
+                src="../../assets/images/sample/sample_tee.png"
+                alt="Small Image 4"
+                class="img-fluid rounded small-image"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--Product card for mobile-->
+<div class="row mb-4 d-lg-none">
+    <div
+      class="col-12 p-4"
+      style=" background-color: white; border: 1px black solid"
+    >
+
+        <!--product title-->
+        <div class="d-flex flex-column">
+            <p class="text-capitalize" style="font-weight: 400; color: grey">
+                WINTER HOODIE
+            </p>
+            <p class="fs-1 text-capitalize" style="font-weight: 400">
+                Twakkul hoodie 320 GSM
+            </p>
+            <hr />
+        </div>
+
+        <!--product image-->
+        <div
+          class="d-flex justify-content-center"
+          style="height: 50vh; margin-top: 2.5rem"
+        >
+          <!-- <div class="p-4" style="background-color: white;">
+                  </div> -->
+  
+          <img src="../../assets/images/sample/sample_tee.png" alt="Product Image" class="img-fluid rounded-start magnifier-container" 
+                  style="
+                  object-fit: contain; 
+                  "
+                  >
+  
+          <!-- <lib-ngx-image-zoom
+            [thumbImage]="teeImage"
+            [fullImage]="teeImage"
+            [zoomMode]="'hover'"
+            style="object-fit: contain;"
+          ></lib-ngx-image-zoom> -->
+        </div>
+
+        <div
+            class="d-flex flex-wrap justify-content-start align-items-start"
+          >
+            <!-- Add four small images here -->
+            <div class="small-image-container">
+              <img
+                src="../../assets/images/sample/sample_tee.png"
+                alt="Small Image 1"
+                class="img-fluid rounded small-image"
+              />
+            </div>
+            <div class="p-h-sm"></div>
+            <div class="small-image-container">
+              <img
+                src="../../assets/images/sample/sample_tee.png"
+                alt="Small Image 2"
+                class="img-fluid rounded small-image"
+              />
+            </div>
+            <div class="p-h-sm"></div>
+            <div class="small-image-container">
+              <img
+                src="../../assets/images/sample/sample_tee.png"
+                alt="Small Image 3"
+                class="img-fluid rounded small-image"
+              />
+            </div>
+            <div class="p-h-sm"></div>
+            <div class="small-image-container">
+              <img
+                src="../../assets/images/sample/sample_tee.png"
+                alt="Small Image 4"
+                class="img-fluid rounded small-image"
+              />
+            </div>
+          </div>
+ 
+
+        <div class="d-flex flex-column" style="color: black; width: 100%;">
+            <p class="fs-1" style="font-weight: 200">₹ 849.00</p>
+            <p style="color: gray; padding-top: 5px">Short Description</p>
+            <p style="font-weight: 100">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
+              quam cumque aliquid aperiam nostrum eos.
+            </p>
+            <div class="p-v-md"></div>
+
+            <div class="d-flex justify-content-start">
+              <p class="size-cat">S</p>
+              <div class="p-h-sm"></div>
+              <p class="selected-size-cat">M</p>
+              <div class="p-h-sm"></div>
+              <p class="size-cat">L</p>
+              <div class="p-h-sm"></div>
+              <p class="size-cat">XL</p>
+            </div>
+
+            <div class="p-v-sm"></div>
+            <div class="row">
+              <button
+                class="btn"
+                style="
+                  padding-left: 50px;
+                  padding-right: 50px;
+                  padding-top: 13px;
+                  padding-bottom: 13px;
+                  background-color: black;
+                  color: white;
+                  font-size: 16px;
+                  border-radius: 0px;
+                  /* width: 7rem; */
+                  /* margin: 1rem; */
+                "
+              >
+                Buy now
+              </button>
+
+              <div class="p-v-sm"></div>
+
+              <div style="width: 10px"></div>
+              <button
+                class="btn"
+                style="
+                  padding-left: 50px;
+                  padding-right: 50px;
+                  padding-top: 13px;
+                  padding-bottom: 13px;
+                  color: black;
+                  font-size: 16px;
+                  border-radius: 0px;
+                  border: 2px black solid;
+                "
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+
+          <!--OLD DATA-->
+
+      
+    </div>
+  </div>
