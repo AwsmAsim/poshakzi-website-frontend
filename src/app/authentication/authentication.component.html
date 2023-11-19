@@ -1,0 +1,454 @@
+<div class="container-fluid">
+  <div class="row">
+    <div
+      class="col-6 text-center p-3"
+      [style]="
+        logInScreen
+          ? 'background-color: white; color: black;'
+          : 'background-color: black; color: white;'
+      "
+      (click)="logInScreen = true"
+    >
+      Log In
+    </div>
+
+    <div
+      class="col-6 text-center p-3"
+      style="background-color: black; color: white"
+      [style]="
+        !logInScreen
+          ? 'background-color: white; color: black;'
+          : 'background-color: black; color: white;'
+      "
+      (click)="logInScreen = false"
+    >
+      Sign Up
+    </div>
+  </div>
+
+  <div class="row">
+    <!--white space-->
+    <div class="col-lg-1"></div>
+
+    <div
+      *ngIf="!logInScreen"
+      class="col-lg-10 col-md col-sm d-flex justify-content-center"
+      style="min-height: 100vh"
+    >
+      <form
+        class="form"
+        style="padding-top: -30px; padding-left: calc(-1 * 50%)"
+        [formGroup]="registerForm"
+      >
+        <div class="d-flex justify-content-center pt-4">
+          <img
+            src="../../assets/images/logo/poshakzi-logo.png"
+            alt=""
+            height="55rem"
+          />
+        </div>
+
+        <div class="row pt-2">
+          <div class="col-md-12">
+            <a
+              class="btn btn-google btn-block text-uppercase btn-outline"
+              href="#"
+            >
+              <img
+                src="https://img.icons8.com/color/16/000000/google-logo.png"
+              />
+              <span style="padding-left: 5px"> Signup Using Google </span>
+            </a>
+          </div>
+        </div>
+
+        <div class="or-container">
+          <div class="line-separator"></div>
+          <div class="or-label">or</div>
+          <div class="line-separator"></div>
+        </div>
+
+        <!-- <div style="height: 10px"></div> -->
+
+        <div class="form-group">
+          <label for="mobileNumber" class="form-control-label">
+            Mobile Number*:
+          </label>
+          <br />
+          <input
+            type="text"
+            placeholder="Phone Number"
+            formControlName="mobileNumber"
+            id="mobileNumber"
+          />
+        </div>
+
+        <div style="height: 10px"></div>
+
+
+        
+        <div class="form-group" 
+        *ngIf="registerForm.controls['mobileNumber'].touched && !registerForm.controls['mobileNumber'].errors"
+        >
+            <label for="otp" class="form-control-label">
+              OTP*:
+            </label>
+            <br />
+            <!-- <ng-otp-input  [formCtrl]="registerForm.get('otp')"  [config]="{length:5}"></ng-otp-input> -->
+            <ng-otp-input  
+            (onInputChange)="onOtpChange($event)"
+            [config]="{length:4, allowNumbersOnly: true,  inputClass: 'otp-input'}"
+            
+            ></ng-otp-input>
+          </div>
+
+          <div style="height: 20px"></div>
+
+        <div class="form-group">
+          <label for="emailAddress" class="form-control-label">
+            Email Address:
+          </label>
+          <br />
+          <input
+            type="text"
+            placeholder="Email Address"
+            formControlName="emailAddress"
+            id="emailAddress"
+          />
+        </div>
+
+        <div 
+        *ngIf="registerForm.controls['emailAddress'].touched && !registerForm.controls['emailAddress'].errors"
+        style="height: 10px;"></div>
+
+        <div class="form-group" *ngIf="registerForm.controls['emailAddress'].touched && !registerForm.controls['emailAddress'].errors">
+            <button
+              class="btn text-center"
+              style="
+                color: white;
+                background-color: black;
+                border-radius: 0px;
+                padding: 0.2rem 2rem 0.2rem 2rem;
+              "
+            >
+              Verify
+            </button>
+        </div>
+
+
+        <div style="height: 20px"></div>
+
+        <div class="form-group">
+          <label for="firstName" class="form-control-label">
+            First Name*:
+          </label>
+          <br />
+          <input
+            type="text"
+            placeholder="First Name"
+            formControlName="firstName"
+            id="firstName"
+          />
+        </div>
+
+        <div style="height: 20px"></div>
+
+        <div class="form-group">
+          <label for="lastName" class="form-control-label"> Last Name*: </label>
+          <br />
+          <input
+            type="text"
+            placeholder="Last Name"
+            formControlName="lastName"
+            id="lastName"
+          />
+        </div>
+
+        <div style="height: 20px"></div>
+
+        <div class="form-group">
+          <label class="custom-control custom-radio">Gender*: </label> <br />
+          <input
+            type="radio"
+            class="custom-control-input"
+            formControlName="gender"
+            value="male"
+          />
+          <span class="custom-control-label">Male</span>
+          <br />
+          <input
+            type="radio"
+            class="custom-control-input"
+            formControlName="gender"
+            value="female"
+          />
+          <span class="custom-control-label">Female</span>
+        </div>
+
+        <div style="height: 20px"></div>
+
+        <div class="form-group">
+          <label for="password" class="form-control-label"> Password*: </label>
+          <br />
+          <input
+            type="password"
+            placeholder="Password"
+            formControlName="password"
+            id="password"
+          />
+        </div>
+
+        <div style="height: 20px"></div>
+
+        <div class="form-group">
+          <label for="confirmPassword" class="form-control-label">
+            Confirm Password*:
+          </label>
+          <br />
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            formControlName="confirmPassword"
+            id="confirmPassword"
+          />
+        </div>
+
+        <div style="height: 20px"></div>
+
+        <!--https://data.gov.in/catalog/all-india-pincode-directory-->
+        <div class="form-group">
+          <label for="pincode" class="form-control-label"> Pin Code*: </label>
+          <br />
+          <input
+            type="text"
+            placeholder="Pin Code"
+            formControlName="pincode"
+            id="pincode"
+          />
+        </div>
+
+        <div style="height: 20px"></div>
+
+        <div class="form-group">
+          <label for="addressLine1" class="form-control-label">
+            Address Line 1*:
+          </label>
+          <br />
+          <input
+            type="text"
+            placeholder="Address Line 1"
+            formControlName="addressLine1"
+            id="addressLine1"
+          />
+        </div>
+
+        <div style="height: 20px"></div>
+
+        <div class="form-group">
+          <label for="addressLine2" class="form-control-label">
+            Address Line 2:
+          </label>
+          <br />
+          <input
+            type="text"
+            placeholder="Address Line 2"
+            formControlName="addressLine2"
+            id="addressLine2"
+          />
+        </div>
+
+        <div style="height: 20px"></div>
+
+        <div class="form-group">
+          <button
+            class="btn text-center"
+            style="
+              color: white;
+              background-color: black;
+              border-radius: 0px;
+              padding: 0.5rem 4rem 0.5rem 4rem;
+            "
+          >
+            Sign Up
+          </button>
+        </div>
+
+        <div style="height: 20px"></div>
+    </form>
+    </div>
+
+    <!--login form-->
+    <div
+      *ngIf="logInScreen"
+      class="col-lg-10 col-md col-sm d-flex align-items-center justify-content-center"
+      style="min-height: 80vh"
+    >
+      <div
+        class="form"
+        style="padding-top: -30px; padding-left: calc(-1 * 50%)"
+      >
+        <div class="d-flex justify-content-center">
+          <img
+            src="../../assets/images/logo/poshakzi-logo.png"
+            alt=""
+            height="55rem"
+          />
+        </div>
+
+        <div style="height: 20px"></div>
+
+        <div class="form-group">
+          <label for="identifier" class="form-control-label">
+            Email Address or Mobile Number:
+          </label>
+          <br />
+          <input
+            type="text"
+            placeholder="Email or Phone Number"
+            formControlName="identifier"
+            id="identifier"
+          />
+        </div>
+
+        <div style="height: 20px"></div>
+
+        <div class="form-group">
+          <label for="password" class="form-control-label"> Password: </label>
+          <br />
+          <input
+            type="password"
+            placeholder="Password"
+            formControlName="password"
+            id="password"
+          />
+        </div>
+
+        <div style="height: 20px"></div>
+
+        <div class="form-group">
+          <button
+            class="btn text-center"
+            style="
+              color: white;
+              background-color: black;
+              border-radius: 0px;
+              padding: 0.5rem 4rem 0.5rem 4rem;
+            "
+          >
+            Log In
+          </button>
+        </div>
+
+        <div class="or-container">
+          <div class="line-separator"></div>
+          <div class="or-label">or</div>
+          <div class="line-separator"></div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <a
+              class="btn btn-google btn-block text-uppercase btn-outline"
+              href="#"
+            >
+              <img
+                src="https://img.icons8.com/color/16/000000/google-logo.png"
+              />
+              <span style="padding-left: 5px"> Signup Using Google </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      *ngIf="logInScreen"
+      class="col-lg-10 col-md col-sm d-flex align-items-center justify-content-center"
+      style="min-height: 80vh"
+    >
+      <form
+        class="form"
+        style="padding-top: -30px; padding-left: calc(-1 * 50%)"
+        [formGroup] = "loginForm"
+      >
+        <div class="d-flex justify-content-center">
+          <img
+            src="../../assets/images/logo/poshakzi-logo.png"
+            alt=""
+            height="55rem"
+          />
+        </div>
+
+        <div style="height: 20px"></div>
+
+        <div class="form-group">
+          <label for="identifier" class="form-control-label">
+            Email Address or Mobile Number:
+          </label>
+          <br />
+          <input
+            type="text"
+            placeholder="Email or Phone Number"
+            formControlName="identifier"
+            id="identifier"
+          />
+        </div>
+
+        <div style="height: 20px"></div>
+
+        <div class="form-group">
+          <label for="password" class="form-control-label"> Password: </label>
+          <br />
+          <input
+            type="password"
+            placeholder="Password"
+            formControlName="password"
+            id="password"
+          />
+          <div *ngIf="registerForm.controls['password'].errors!['invalidPassword']" class="text-danger">
+            Password must contain at least one uppercase letter, one lowercase letter, one digit, and be at least 8 characters long.
+          </div>
+        </div>
+
+        <div style="height: 20px"></div>
+
+        <div class="form-group">
+          <button
+            class="btn text-center"
+            style="
+              color: white;
+              background-color: black;
+              border-radius: 0px;
+              padding: 0.5rem 4rem 0.5rem 4rem;
+            "
+          >
+            Log In
+          </button>
+        </div>
+
+        <div class="or-container">
+          <div class="line-separator"></div>
+          <div class="or-label">or</div>
+          <div class="line-separator"></div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <a
+              class="btn btn-google btn-block text-uppercase btn-outline"
+              href="#"
+            >
+              <img
+                src="https://img.icons8.com/color/16/000000/google-logo.png"
+              />
+              <span style="padding-left: 5px"> Signup Using Google </span>
+            </a>
+          </div>
+        </div>
+    </form>
+    </div>
+
+    <!--white space-->
+    <div class="col-lg-1"></div>
+  </div>
+</div>

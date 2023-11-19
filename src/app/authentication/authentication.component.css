@@ -1,0 +1,123 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'poppins';
+    font-size: 18px;
+}
+
+input[type="text"] {
+    width: 600px;
+    border: 1px solid black;
+    border-radius: 0px; /* Set border-radius to 0 to remove rounded corners */
+    padding: 8px; /* Adjust padding as needed */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+input[type="password"] {
+    width: 600px;
+    border: 1px solid black;
+    border-radius: 0px; /* Set border-radius to 0 to remove rounded corners */
+    padding: 8px; /* Adjust padding as needed */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.btn-google {
+    color: #545454;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px 1px #ddd;
+    padding: 0.5rem 4rem 0.5rem 4rem;
+    border: 1px solid black;
+    border-radius: 0px;
+}
+
+.or-container {
+    align-items: center;
+    color: #ccc;
+    display: flex;
+    margin: 25px 0;
+}
+
+.line-separator {
+    background-color: #ccc;
+    flex-grow: 5;
+    height: 1px;
+}
+
+.or-label {
+    flex-grow: 1;
+    margin: 0 15px;
+    text-align: center;
+}
+
+
+@media only screen and (max-width: 800px) {
+    input[type="text"] {
+        width: 200px; /* Adjust the width as needed for smaller screens */
+        padding: 4px;
+    }
+
+    *{
+        padding: 0;
+        margin: 0;
+        font-family: 'poppins';
+        font-size: 14px;
+    }
+
+    input[type="password"] {
+        width: 200px;
+        padding: 4px; /* Adjust padding as needed */
+    }
+
+    .btn-google {
+        color: #545454;
+        background-color: #ffffff;
+        box-shadow: 0 1px 2px 1px #ddd;
+        padding: 0.25rem 2rem 0.25rem 2rem;
+        border: 1px solid black;
+        border-radius: 0px;
+    }
+}
+
+.custom-radio .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: black; /* Change this to the desired selected color */
+    border-color: black; /* Change this to the desired selected color */
+}
+
+
+.otp-input {
+    font-size: 18px;
+}
+
+
+@media only screen and (max-width: 800px) {
+
+    .otp-input {
+        font-size: 12px;
+    }
+
+    input[type="text"] {
+        width: 190px; /* Adjust the width as needed for smaller screens */
+        padding: 8px;
+    }
+
+    *{
+        padding: 0;
+        margin: 0;
+        font-family: 'poppins';
+        font-size: 14px;
+    }
+
+    input[type="password"] {
+        width: 190px;
+        padding: 8px; /* Adjust padding as needed */
+    }
+
+    .btn-google {
+        color: #545454;
+        background-color: #ffffff;
+        box-shadow: 0 1px 2px 1px #ddd;
+        padding: 0.2rem 1.5rem 0.2rem 1.5rem;
+        border: 1px solid black;
+        border-radius: 0px;
+    }
+}
